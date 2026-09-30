@@ -5,6 +5,11 @@ RewriteRule ^assets/(.*)$ public/assets/$1 [L]
 RewriteRule ^uploads/(.*)$ public/uploads/$1 [L]
 RewriteRule ^favicon\.ico$ public/favicon.ico [L]
 
+# Route the application directory itself to the front controller. Without
+# this explicit rule Apache treats the existing directory as a static path;
+# because directory listings are disabled, the base URL returns 403.
+RewriteRule ^$ public/index.php [QSA,L]
+
 RewriteRule ^(?:app|config|core|database|storage|tests)(?:/|$) - [F,L,NC]
 RewriteRule ^(?:\.env|README\.md|\.gitignore)$ - [F,L,NC]
 
