@@ -1,0 +1,20 @@
+Options -Indexes
+RewriteEngine On
+
+RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+RewriteRule ^uploads/(.*)$ public/uploads/$1 [L]
+RewriteRule ^favicon\.ico$ public/favicon.ico [L]
+
+RewriteRule ^(?:app|config|core|database|storage|tests)(?:/|$) - [F,L,NC]
+RewriteRule ^(?:\.env|README\.md|\.gitignore)$ - [F,L,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ public/index.php [QSA,L]
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
