@@ -2,6 +2,12 @@
 
 依據 `SPEC-ESG-2026-V1.0` 建置的 PHP 8.1+、MySQL 8.0+ 企業 ESG 管理系統核心版本。系統採用單一公開入口、PDO 參數化查詢、Session 與 CSRF 保護、RBAC 權限控制及不可竄改操作軌跡，適合部署於 XAMPP 或相容的 LAMP/WAMP 環境。
 
+## 線上系統
+
+公開執行網址：<https://darksalmon-eagle-978314.hostingersite.com/uri8764>
+
+此專案需要 PHP 與 MySQL／MariaDB 執行環境，因此正式系統部署於 Hostinger；GitHub 儲存庫提供公開原始碼、資料庫結構、測試與安裝說明。GitHub Pages 僅支援靜態網站，不能直接執行本專案的後端與資料庫功能。
+
 ## 已實作範圍
 
 - MOD-01：組織樹、盤查邊界、基期年度、五種標準角色、帳號建立、首次登入強制改密碼、登入防暴力嘗試與稽核日誌。
